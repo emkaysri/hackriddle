@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maklamine.codered.ShoppingActivity">
+
+    <TextView
+        android:text="Shopping Activity"
+        android:textSize="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Bottom Navigation Begin -->
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/homeButton"
+            style="@style/tabLayout">
+            <ImageView
+                android:src="@mipmap/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/homeTab" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/inventoryButton"
+            style="@style/tabLayout">
+            <ImageView
+                android:src="@mipmap/inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inventoryTab" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/shoppingButton"
+            style="@style/tabLayout">
+            <ImageView
+                android:src="@mipmap/shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shoppingTab" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/chartButton"
+            style="@style/tabLayout">
+            <ImageView
+                android:src="@mipmap/chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chartTab" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/favoriteButton"
+            style="@style/tabLayout">
+            <ImageView
+                android:src="@mipmap/favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/favoriteTab" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Bottom Navigation End -->
+
+</RelativeLayout>
