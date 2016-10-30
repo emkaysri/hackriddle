@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.Console;
 import java.util.ArrayList;
 
 /**
@@ -63,10 +64,25 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues item = new ContentValues();
 
-        item.put("title", title);
-        item.put("quantity", quantity);
-        item.put("units", units);
-        db.insert("Inventory", null, item);
+        Cursor result = db.rawQuery("select '" + title + "' from Inventory", null);
+        int q = quantity;
+        if(result.getCount() == 0){
+            result.moveToFirst();
+            item.put("title", title);
+            item.put("quantity", quantity);
+            item.put("units", units);
+            db.insert("Inventory", null, item);
+        } else if(result.getCount() == 1) {
+            q += Integer.parseInt(result.getString(result.getColumnIndexOrThrow("quantity")));
+            item.put("title", title);
+            item.put("quantity", q);
+            item.put("units", units);
+            db.update("Inventory", item, null, null);
+        }else{
+            //error
+        }
+
+
     }
 
     public void deleteInventory(int id){

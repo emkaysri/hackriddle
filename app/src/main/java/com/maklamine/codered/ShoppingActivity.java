@@ -79,7 +79,9 @@ public class ShoppingActivity extends AppCompatActivity implements OnClickListen
         if (scanningResult != null) {
             String scanContent = scanningResult.getContents();
             String scanFormat = scanningResult.getFormatName();
-            formatTxt.setText("FORMAT: " + scanFormat);
+            DBHelper temp = new DBHelper(this);
+            temp.insertInventory("test",10,"gallons");
+            formatTxt.setText("FORMAT: " + temp.getInventory().get(0).getQuantity());
             contentTxt.setText("CONTENT: " + scanContent);
         } else {
             Toast toast = Toast.makeText(getApplicationContext(),
