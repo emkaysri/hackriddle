@@ -1,17 +1,40 @@
 package com.maklamine.codered;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
+
 public class ChartActivity extends AppCompatActivity {
+
+    LineGraphSeries<DataPoint> series;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
+
+
+        double x, y;
+        x = -5.0;
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        series = new LineGraphSeries<DataPoint>();
+        for(int i = 0; i < 500; i++)
+        {
+            x = x+0.1;
+            y = Math.sin(0.5*x); //Change this function
+            series.appendData(new DataPoint(x,y), true, 500);
+        }
+        graph.addSeries(series);
+
+
 
         //Bottom Navigation Button
         LinearLayout homeButton = (LinearLayout) findViewById(R.id.homeButton);
@@ -55,5 +78,10 @@ public class ChartActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public void createChart()
+    {
+
     }
 }

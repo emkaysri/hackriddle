@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.maklamine.codered.ChartActivity">
 
-    <TextView
-        android:text="Chart Activity"
-        android:textSize="34dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/graph"/>
 
     <!-- Bottom Navigation Begin -->
     <LinearLayout
