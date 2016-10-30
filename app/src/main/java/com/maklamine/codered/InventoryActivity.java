@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
 public class InventoryActivity extends AppCompatActivity {
 
     @Override

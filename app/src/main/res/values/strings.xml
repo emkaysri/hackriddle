@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CodeRed</string>
-    <string name="title_activity_bac">bac</string>
+    <string name="scan">Scan</string>
+    <string name="title_activity_shopping">Shopping</string>
 </resources>

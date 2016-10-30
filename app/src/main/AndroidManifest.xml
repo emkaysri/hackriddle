@@ -16,9 +16,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".InventoryActivity" />
-        <activity android:name=".ShoppingActivity" />
         <activity android:name=".ChartActivity" />
         <activity android:name=".FavoriteActivity" />
+        <activity
+            android:name=".Shopping"
+            android:label="@string/title_activity_shopping"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

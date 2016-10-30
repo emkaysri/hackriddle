@@ -17,14 +17,15 @@
 
     </ListView>
 
+
     <!-- Bottom Navigation Begin -->
     <LinearLayout
-        android:background="@color/colorPrimary"
+        android:background="#3BCA27"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/homeButton"
@@ -57,7 +58,7 @@
             android:id="@+id/chartButton"
             style="@style/tabLayout">
             <ImageView
-                android:src="@mipmap/chart"
+                android:src="@mipmap/health"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chartTab" />
@@ -72,6 +73,7 @@
                 android:id="@+id/favoriteTab" />
         </LinearLayout>
     </LinearLayout>
+
     <!-- Bottom Navigation End -->
 
 </RelativeLayout>
