@@ -31,6 +31,9 @@
             android:name=".Shopping"
             android:label="@string/title_activity_shopping"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+<<<<<<< HEAD
+>>>>>>> parent of f2e99ad... Barcode works (Tested)
+=======
 >>>>>>> parent of f2e99ad... Barcode works (Tested)
     </application>
 <uses-sdk
