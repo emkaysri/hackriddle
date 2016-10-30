@@ -82,7 +82,7 @@ public class ShoppingActivity extends AppCompatActivity implements OnClickListen
             DBHelper temp = new DBHelper(this);
             temp.insertInventory("test",10,"gallons");
             formatTxt.setText("FORMAT: " + temp.getInventory().get(0).getQuantity());
-            contentTxt.setText("CONTENT: " + scanContent);
+            contentTxt.setText("CONTENT: " + temp.getInventory().get(0).getUnits());
         } else {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_SHORT);

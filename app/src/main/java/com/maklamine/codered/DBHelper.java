@@ -46,7 +46,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         for (int i = 0; i < result.getCount(); ++i){
             String title = result.getString(result.getColumnIndex("title"));
-            int quantity = Integer.parseInt(result.getString(result.getColumnIndexOrThrow("quantity")));
+            int quantity = Integer.parseInt(result.getString(result.getColumnIndex("quantity")));
             String units = result.getString(result.getColumnIndex("units"));
 
             Inventory item = new Inventory(title, quantity, units);
@@ -60,29 +60,34 @@ public class DBHelper extends SQLiteOpenHelper {
         return inventory;
     }
 
-    public void insertInventory(String title, int quantity, String units){
+    public void insertInventory(String title, int quantity, String units) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues item = new ContentValues();
-
-        Cursor result = db.rawQuery("select '" + title + "' from Inventory", null);
         int q = quantity;
-        if(result.getCount() == 0){
+        try {
+            Cursor result = db.rawQuery("SELECT * FROM Inventory WHERE title = '" + title + "'", null);
+            if (result.getCount() == 1) {
+
+                q += Integer.parseInt(result.getString(result.getColumnIndexOrThrow("quantity")));
+                db.execSQL("UPDATE Inventory SET quantity='"+ q +"' WHERE title=" + title);
+
+//                item.put("title", title);
+//                item.put("quantity", q);
+//                item.put("units", units);
+//                db.update("Inventory", item, null, null);
+            } else {
+                //error
+            }
+        } catch (Exception e) {
+            Cursor result = db.rawQuery("SELECT * FROM Inventory", null);
             result.moveToFirst();
             item.put("title", title);
             item.put("quantity", quantity);
             item.put("units", units);
             db.insert("Inventory", null, item);
-        } else if(result.getCount() == 1) {
-            q += Integer.parseInt(result.getString(result.getColumnIndexOrThrow("quantity")));
-            item.put("title", title);
-            item.put("quantity", q);
-            item.put("units", units);
-            db.update("Inventory", item, null, null);
-        }else{
-            //error
+
+
         }
-
-
     }
 
     public void deleteInventory(int id){
