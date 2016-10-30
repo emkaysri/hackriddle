@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="16dp"
     tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:id="@+id/lunch">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Lunch"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:id="@+id/dinner">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Dinner"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:id="@+id/dessert">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Desserts"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:id="@+id/snack">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Snacks"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:id="@+id/lowCarbs">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Low Carbs"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:id="@+id/highProtein">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="High Protein"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- Bottom Navigation Begin -->
     <LinearLayout
@@ -61,55 +166,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:text="Dinner"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:layout_alignTop="@+id/button9"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:id="@+id/button10" />
 
-    <Button
-        android:text="Desert"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:id="@+id/button11"
-        android:layout_below="@+id/button9"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="Snack"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:id="@+id/button12"
-        android:layout_below="@+id/button9"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="High Protein"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:layout_alignBottom="@+id/button13"
-        android:layout_toEndOf="@+id/button13"
-        android:id="@+id/button14"
-        android:layout_alignStart="@+id/button12" />
-
-    <Button
-        android:text="Low Carbs"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:id="@+id/button13"
-        android:layout_below="@+id/button11"
-        android:layout_alignEnd="@+id/button11" />
-
-    <Button
-        android:text="Lunch"
-        android:layout_width="210dp"
-        android:layout_height="180dp"
-        android:id="@+id/button9"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
 
     <!-- Bottom Navigation End -->
