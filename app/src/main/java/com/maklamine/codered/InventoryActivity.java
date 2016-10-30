@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class InventoryActivity extends AppCompatActivity {
 
@@ -12,6 +15,8 @@ public class InventoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+        loadData();
+
 
         //Bottom Navigation Button
         LinearLayout homeButton = (LinearLayout) findViewById(R.id.homeButton);
@@ -55,5 +60,13 @@ public class InventoryActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    public void loadData(){
+        DBHelper dbHelper = new DBHelper(this);
+        ArrayList<Inventory> inventory = dbHelper.getInventory();
+        InventoryAdapter inventoryAdapter = new InventoryAdapter(this, inventory);
+        ListView listView = (ListView)findViewById(R.id.listviewInv);
+        listView.setAdapter(inventoryAdapter);
     }
 }

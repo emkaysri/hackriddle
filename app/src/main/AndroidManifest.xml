@@ -18,7 +18,7 @@
         <activity android:name=".InventoryActivity" />
         <activity android:name=".ShoppingActivity" />
         <activity android:name=".ChartActivity" />
-        <activity android:name=".FavoriteActivity"></activity>
+        <activity android:name=".FavoriteActivity" />
     </application>
 
 </manifest>
