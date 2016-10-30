@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
     <!-- Bottom Navigation Begin -->
     <LinearLayout
         android:background="#3BCA27"
@@ -66,6 +67,7 @@
                 android:id="@+id/favoriteTab" />
         </LinearLayout>
     </LinearLayout>
+
     <!-- Bottom Navigation End -->
 
 </RelativeLayout>
