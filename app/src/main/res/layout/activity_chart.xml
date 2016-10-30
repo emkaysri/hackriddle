@@ -5,13 +5,25 @@
     android:layout_height="match_parent"
     tools:context="com.maklamine.codered.ChartActivity">
 
-    <TextView
-        android:text="Chart Activity"
-        android:textSize="34dp"
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+    <com.jjoe64.graphview.GraphView
+
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:id="@+id/graph"/>
+
+    </LinearLayout>
+
 
     <!-- Bottom Navigation Begin -->
+
     <LinearLayout
         android:background="#3BCA27"
         android:orientation="horizontal"

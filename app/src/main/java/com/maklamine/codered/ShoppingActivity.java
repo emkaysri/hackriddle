@@ -1,8 +1,5 @@
 package com.maklamine.codered;
 
-
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +17,7 @@ public class ShoppingActivity extends AppCompatActivity implements OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping);
+        setContentView(R.layout.content_shopping);
         //Bottom Navigation Button
         LinearLayout homeButton = (LinearLayout) findViewById(R.id.homeButton);
         LinearLayout inventoryButton = (LinearLayout) findViewById(R.id.inventoryButton);
