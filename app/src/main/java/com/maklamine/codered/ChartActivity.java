@@ -13,7 +13,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class ChartActivity extends AppCompatActivity {
 
-    LineGraphSeries<DataPoint> series;
+    LineGraphSeries<DataPoint> series1, series2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +22,30 @@ public class ChartActivity extends AppCompatActivity {
 
 
         double x, y;
-        x = -5.0;
+        x = 0.0;
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<DataPoint>();
+
+        series1 = new LineGraphSeries<DataPoint>();
         for(int i = 0; i < 500; i++)
         {
             x = x+0.1;
-            y = Math.sin(0.5*x); //Change this function
-            series.appendData(new DataPoint(x,y), true, 500);
+            y = Math.sin(0.5*x); //Change this function from sin
+            series1.appendData(new DataPoint(x,y), true, 500);
         }
-        graph.addSeries(series);
 
+        x = -5.0;
+        y = 0.0;
+        series2 = new LineGraphSeries<DataPoint>();
+        for(int i = 0; i < 500; i++)
+        {
+            x = x+0.1;
+            y = 0.5*x + 2; //Change this function from cos
+            series2.appendData(new DataPoint(x,y), true, 500);
+        }
+
+        graph.addSeries(series1);
+        graph.addSeries(series2);
 
 
         //Bottom Navigation Button
