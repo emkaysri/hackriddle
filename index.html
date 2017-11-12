@@ -1,3 +1,9 @@
+<?php
+session_start();
+    if (!isset($_SESSION["visits"]))
+        $_SESSION["visits"] = 0;
+    $_SESSION["visits"] = $_SESSION["visits"] + rand(0, 5);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +27,13 @@
   <body>
     <div id="map"></div>
     <script>
+    // Random float between
+function randomFloatBetween(minValue,maxValue,precision){
+    if(typeof(precision) == 'undefined'){
+        precision = 2;
+    }
+    return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)),maxValue).toFixed(precision));
+}
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
@@ -56,6 +69,24 @@
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
+
+          var markers = [];
+          for (var i = 0; i < parseInt(<?php echo $_SESSION["visits"];?>); i++) {
+    var pos = new google.maps.LatLng(randomFloatBetween(0,position.coords.latitude,5), randomFloatBetween(-100, position.coords.longitude,5));
+
+    markers[i] = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon: 'images/locred.png',
+        description: data[i].desc,
+        id: i
+    });
+
+    infowindow.open(map, markers[i]);
+    google.maps.event.addListener(markers[i], 'click', function () {
+        alert(markers[this.id].description)
+    })
+}
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
