@@ -6,7 +6,7 @@ $doc = domxml_new_doc("1.0");
 $node = $doc->create_element("markers");
 $parnode = $doc->append_child($node);
 
-$connection = new mysqli($hostname, $username, $password, $database);
+$connection = new mysqli($server, $username, $password, $db);
 
 if (!$connection) {
   die('Not connected : ' . mysql_error());
