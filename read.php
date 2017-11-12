@@ -6,7 +6,7 @@ if (!$connection) {
   die('Not connected : ' . mysql_error());
 }
 
-$sql = "SELECT FROM people_loc WHERE *";
+$sql = "SELECT * FROM people_loc";
 
 
 if ($result = $connection->query($sql)) {
