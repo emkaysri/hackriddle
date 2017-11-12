@@ -19,7 +19,7 @@ if (!$db_selected) {
 }
 
 // Select all the rows in the markers table
-$query = "SELECT * FROM markers WHERE 1";
+$query = "SELECT * FROM people_loc WHERE 1";
 $result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
@@ -32,13 +32,9 @@ while ($row = @mysql_fetch_assoc($result)){
   // Add to XML document node
   $node = $doc->create_element("marker");
   $newnode = $parnode->append_child($node);
-
   $newnode->set_attribute("id", $row['id']);
-  $newnode->set_attribute("name", $row['name']);
-  $newnode->set_attribute("address", $row['address']);
   $newnode->set_attribute("lat", $row['lat']);
   $newnode->set_attribute("lng", $row['lng']);
-  $newnode->set_attribute("type", $row['type']);
 }
 
 $xmlfile = $doc->dump_mem();
