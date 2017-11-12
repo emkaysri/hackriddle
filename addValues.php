@@ -18,8 +18,8 @@ if ($connection->query($sql) === TRUE) {
 } else {
     echo "Error adding values " . $connection->error;
 }
-}else{
-  echo "no Post"
+} else {
+  echo "no Post";
 }
 $connection->close();
 ?>
