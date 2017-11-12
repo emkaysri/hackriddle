@@ -53,6 +53,31 @@
 
             map.setCenter(pos);
             map.setZoom(11);
+            var marker = new google.maps.Marker({
+              position: {lat: position.coords.latitude + .2, lng: position.coords.longitude - .1},
+              map: map,
+              title: '3 People'
+            });
+            var marker = new google.maps.Marker({
+              position: {lat: position.coords.latitude + .04, lng: position.coords.longitude},
+              map: map,
+              title: '5 People'
+            });
+            var marker = new google.maps.Marker({
+              position: {lat: position.coords.latitude - .03, lng: position.coords.longitude - .2},
+              map: map,
+              title: '6 People'
+            });
+            var marker = new google.maps.Marker({
+              position: {lat: position.coords.latitude - .2, lng: position.coords.longitude - .2},
+              map: map,
+              title: '2 People'
+            });
+            var marker2 = new google.maps.Marker({
+              position: {lat: position.coords.latitude - .1, lng: position.coords.longitude + .1},
+              map: map,
+              title: '4 People'
+            });
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -60,6 +85,7 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+
 
         downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
             var xml = data.responseXML;
