@@ -31,11 +31,8 @@ while ($row = @mysql_fetch_assoc($result)){
   // Add to XML document node
   echo '<marker ';
   echo 'id="' . $ind . '" ';
-  echo 'name="' . parseToXML($row['name']) . '" ';
-  echo 'address="' . parseToXML($row['address']) . '" ';
   echo 'lat="' . $row['lat'] . '" ';
   echo 'lng="' . $row['lng'] . '" ';
-  echo 'type="' . $row['type'] . '" ';
   echo '/>';
 }
 
