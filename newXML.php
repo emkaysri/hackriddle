@@ -12,9 +12,9 @@ $connection = new mysqli($server, $username, $password, $db);
 
 // Select all the rows in the markers table
 $query = "SELECT * FROM people_loc WHERE found = '0'";
-$result = $connection->query($sql)
+$result = $connection->query($sql);
 if ($result->num_rows > 0) {
-  die('Invalid query:';
+  die('Invalid query:');
 }
 
 header("Content-type: text/xml");
