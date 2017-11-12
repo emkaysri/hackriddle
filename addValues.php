@@ -5,10 +5,10 @@ $connection = new mysqli($server, $username, $password, $db);
 if (!$connection) {
   die('Not connected : ' . mysql_error());
 }
-if($_PUT)
+if($_POST)
 {
-  $lat=$db->prepare($_PUT['lat']);
-  $lng=$db->prepare($_PUT['lng']);
+  $lat=$db->prepare($_POST['lat']);
+  $lng=$db->prepare($_POST['lng']);
 // sql to create table
 $sql = "INSERT TABLE markers (found, lat, lng) VALUES (0, $lat, $lng)";
 
