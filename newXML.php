@@ -1,6 +1,5 @@
 <?php
 require("phpsqlajax_dbinfo.php");
-
 // Start XML file, create parent node
 $doc = domxml_new_doc("1.0");
 $node = $doc->create_element("markers");
