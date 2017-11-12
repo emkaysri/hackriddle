@@ -8,7 +8,7 @@ if (!$connection) {
 $lat=$_GET['lat'];
 $lng=$_GET['lng'];
 // sql to create table
-$sql = "INSERT INTO TABLE people_loc (found, lat, lng) VALUES (0, $lat, $lng)";
+$sql = "INSERT INTO people_loc (found, lat, lng) VALUES (0, $lat, $lng)";
 
 
 if ($connection->query($sql) === TRUE) {
