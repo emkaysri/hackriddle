@@ -19,7 +19,7 @@ if (!$db_selected) {
 }
 
 // Select all the rows in the markers table
-$query = "SELECT * FROM people_loc WHERE 1";
+$query = "SELECT * FROM people_loc WHERE found = '0'";
 $result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
