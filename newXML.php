@@ -6,16 +6,10 @@ $doc = domxml_new_doc("1.0");
 $node = $doc->create_element("markers");
 $parnode = $doc->append_child($node);
 
-$connection = new mysqli($server, $username, $password, $db);
+$connection = mysql_connect($server, $username, $password, $db);
 
 if (!$connection) {
   die('Not connected : ' . mysql_error());
-}
-
-// Set the active MySQL database
-$db_selected = mysql_select_db($database, $connection);
-if (!$db_selected) {
-  die ('Can\'t use db : ' . mysql_error());
 }
 
 // Select all the rows in the markers table
@@ -39,6 +33,5 @@ while ($row = @mysql_fetch_assoc($result)){
 
 $xmlfile = $doc->dump_mem();
 echo $xmlfile;
-$connection->close();
 
 ?>

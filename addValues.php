@@ -12,9 +12,9 @@ $sql = "INSERT INTO people_loc (found, lat, lng) VALUES (0, $lat, $lng)";
 
 
 if ($connection->query($sql) === TRUE) {
-    echo "added values";
+    echo "0";
 } else {
-    echo "Error adding values " . $connection->error;
+    echo "1" . $connection->error;
 }
 $connection->close();
 ?>
