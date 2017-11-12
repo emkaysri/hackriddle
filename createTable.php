@@ -1,6 +1,6 @@
 <?php
 require("phpsqlajax_dbinfo.php");
-$connection = new mysqli($hostname, $username, $password, $database);
+$connection = new mysqli($server, $username, $password, $db);
 
 if (!$connection) {
   die('Not connected : ' . mysql_error());
